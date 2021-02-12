@@ -19,6 +19,10 @@ public class FuvarProgram {
             fuvarok.add(new Fuvar(sorok.get(i)));
         }
         
+        
+        
+        
+        
     }
     
 }
