@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class FuvarProgram {
@@ -37,6 +39,23 @@ public class FuvarProgram {
         }
         System.out.printf("%d fuvar alatt: %.2f$\n",fuvarDb, osszesen);
         
+        System.out.print("5. feladat: \n");
+        HashMap<String, Integer> fiz_modok = new HashMap<>();
+        for (Fuvar fuvar : fuvarok) {
+            String kulcs = fuvar.getFizetes_modja();
+            if (!fiz_modok.containsKey(kulcs)) {
+                fiz_modok.put(kulcs, 1);
+            }else{
+                int ertek = fiz_modok.get(kulcs);
+                fiz_modok.put(kulcs, ++ertek);
+            }
+        }
+        
+        for (Map.Entry<String, Integer> entry : fiz_modok.entrySet()) {
+            String key = entry.getKey();
+            Integer value = entry.getValue();
+            System.out.printf("\t%7s: %d fuvar\n",key, value);
+        }
         
         
     }
