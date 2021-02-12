@@ -21,6 +21,36 @@ public class Fuvar {
         this.borravalo = Double.parseDouble(s[5]);
         this.fizetes_modja = s[6];
     }
+
+    public int getTaxi_id() {
+        return taxi_id;
+    }
+
+    public String getIndulas() {
+        return indulas;
+    }
+
+    public int getIdotartam() {
+        return idotartam;
+    }
+
+    public double getTavolsag() {
+        return tavolsag;
+    }
+
+    public double getViteldij() {
+        return viteldij;
+    }
+
+    public double getBorravalo() {
+        return borravalo;
+    }
+
+    public String getFizetes_modja() {
+        return fizetes_modja;
+    }
+    
+    
     
     
 }

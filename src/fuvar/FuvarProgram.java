@@ -26,6 +26,16 @@ public class FuvarProgram {
         }
         System.out.println(fuvarDb + " fuvar");
         
+        System.out.print("4. feladat: ");
+        fuvarDb = 0;
+        double osszesen = 0.0;
+        for (Fuvar fuvar : fuvarok) {
+            if (fuvar.getTaxi_id() == 6185) {
+                fuvarDb++;
+                osszesen += fuvar.getViteldij();
+            }
+        }
+        System.out.printf("%d fuvar alatt: %.2f$\n",fuvarDb, osszesen);
         
         
         
