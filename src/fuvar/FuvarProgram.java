@@ -19,6 +19,12 @@ public class FuvarProgram {
             fuvarok.add(new Fuvar(sorok.get(i)));
         }
         
+        System.out.print("3. feladat: ");
+        int fuvarDb = 0;
+        for (int i = 0; i < fuvarok.size(); i++) {
+            fuvarDb++;
+        }
+        System.out.println(fuvarDb + " fuvar");
         
         
         
