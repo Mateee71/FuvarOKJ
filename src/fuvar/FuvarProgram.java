@@ -57,6 +57,13 @@ public class FuvarProgram {
             System.out.printf("\t%7s: %d fuvar\n",key, value);
         }
         
+         System.out.print("6. feladat: ");
+        double osszMegtett = 0.0;
+        for (Fuvar fuvar : fuvarok) {
+            osszMegtett += fuvar.getTavolsag();
+        }
+        System.out.printf("%.2fkm\n",(osszMegtett * 1.6));
+        
         
     }
     
