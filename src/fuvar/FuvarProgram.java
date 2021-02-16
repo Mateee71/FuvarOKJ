@@ -54,8 +54,10 @@ public class FuvarProgram {
         for (Map.Entry<String, Integer> entry : fiz_modok.entrySet()) {
             String key = entry.getKey();
             Integer value = entry.getValue();
-            System.out.printf("\t%7s: %d fuvar\n",key, value);
+            System.out.printf("\t%s: %d fuvar\n",key, value);
         }
+        
+        
         
          System.out.print("6. feladat: ");
         double osszMegtett = 0.0;
@@ -65,6 +67,30 @@ public class FuvarProgram {
         System.out.printf("%.2fkm\n",(osszMegtett * 1.6));
         
         
+
+
+        System.out.print("7. feladat: Leghosszabb fuvar: \n");
+        int max = 0;
+        ArrayList<Fuvar> maximum = new ArrayList<>();
+        for (Fuvar fuvar : fuvarok) {
+            if (fuvar.getIdotartam() > max) {
+                max = fuvar.getIdotartam();
+                maximum.clear();
+                maximum.add(fuvar);
+            }
+        }
+        for (int i = 0; i < maximum.size(); i++) {
+            System.out.println("\tFuvar hossza: " + maximum.get(i).getIdotartam() + " másodperc");
+            System.out.println("\tTaxi azonosító: " + maximum.get(i).getTaxi_id());
+            System.out.println("\tMegtett távolság: " + maximum.get(i).getTavolsag() + " km");
+            System.out.println("\tViteldíj: " + maximum.get(i).getViteldij() + "$");
+        }
+        
+        
+        System.out.print("8. feladat: hibak.txt \n");
+        
+        String kimenet = "Nincs hiba.";
+        Files.write(Paths.get("hiba.txt"), kimenet.getBytes());
     }
     
 }
